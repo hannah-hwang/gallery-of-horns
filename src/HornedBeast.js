@@ -1,4 +1,5 @@
 import React from "react";
+import Card from 'react-bootstrap/Card';
 
 class HornedBeast extends React.Component {
     constructor(props) {
@@ -18,16 +19,16 @@ class HornedBeast extends React.Component {
     render() {
         return (
             <div className="hornedBeast">
-                <h2>{this.props.title}</h2>
-                <p>{this.props.description}</p>
-                <img src={this.props.image_url}
-                    alt={this.props.description}
-                    title={this.props.title}
-                    height={300}
-                    onClick={this.handleFavorite}
-                />
-                {this.state.clickedFavorite ? <p>Favorited: 💜</p> : <p>Favorited: 🖤</p>}
-                <p>Favorites: {this.state.favoritedNumber}</p>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title as="h2">{this.props.title}</Card.Title>
+                    <Card.Text>{this.props.description}</Card.Text>
+                    <Card.Img src={this.props.image_url}
+                        alt={this.props.description}
+                        title={this.props.title}
+                        onClick={this.handleFavorite} />
+                    {this.state.clickedFavorite ? <Card.Text>Favorited: 💜</Card.Text> : <Card.Text>Favorited: 🖤</Card.Text>}
+                    <Card.Text>Favorites: {this.state.favoritedNumber}</Card.Text>
+                </Card>
             </div>
         )
     }
