@@ -6,7 +6,11 @@ class Main extends React.Component {
     render() {
         return (
             <>
-                {data.map(hornedBeast => <HornedBeast title={hornedBeast.title} image_url={hornedBeast.image_url} description={hornedBeast.description}/>)}
+                {data.map((hornedBeast, idx) => <HornedBeast title={hornedBeast.title}
+                    image_url={hornedBeast.image_url}
+                    description={hornedBeast.description}
+                    idx={idx}
+                    />)}
             </>
         )
     }
