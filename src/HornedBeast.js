@@ -1,5 +1,6 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import "./App.css"
 
 class HornedBeast extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class HornedBeast extends React.Component {
     render() {
         return (
             <div className="hornedBeast">
-                <Card style={{ width: '18rem' }}>
+                <Card>
                     <Card.Title as="h2">{this.props.title}</Card.Title>
                     <Card.Text>{this.props.description}</Card.Text>
                     <Card.Img src={this.props.image_url}

@@ -42,3 +42,7 @@ main {
   display: flex;
   flex-wrap: wrap;
 }
+
+.hornedBeast {
+width: 20rem;
+}
