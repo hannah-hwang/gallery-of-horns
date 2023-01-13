@@ -38,12 +38,13 @@
   }
 }
 
+
 main {
   display: flex;
   flex-wrap: wrap;
 }
 
 .hornedBeast {
-width: 20rem;
-
+  width: 20rem;
+  padding: 1rem;
 }
