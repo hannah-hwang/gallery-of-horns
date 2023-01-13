@@ -21,7 +21,7 @@ class HornedBeast extends React.Component {
     render() {
         return (
             <div className="hornedBeast">
-                <Card>
+                <Card style={{ backgroundColor: "lavender" }} className="h-100">
                     <Card.Img src={this.props.image_url}
                         alt={this.props.description}
                         title={this.props.title}
