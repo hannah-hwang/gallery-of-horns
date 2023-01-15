@@ -18,6 +18,10 @@ class HornedBeast extends React.Component {
         })
     };
 
+    beastModal = () => {
+        this.props.handleShowModal(this.props.title, this.props.image_url, this.props.description);
+    }
+
     render() {
         return (
             <div className="hornedBeast">
@@ -26,8 +30,8 @@ class HornedBeast extends React.Component {
                         alt={this.props.description}
                         title={this.props.title}
                         onClick={this.handleFavorite} />
-                    <Card.Title as="h2">{this.props.title}</Card.Title>
-                    <Card.Text>{this.props.description}</Card.Text>
+                    <Card.Title as="h2" onClick={(this.beastModal)}>{this.props.title}</Card.Title>
+                    <Card.Text  >{this.props.description}</Card.Text>
                     <Card.Text>💜 Favorites: {this.state.favoritedNumber}</Card.Text>
                 </Card>
             </div>
@@ -35,4 +39,4 @@ class HornedBeast extends React.Component {
     }
 }
 
-export default HornedBeast
+export default HornedBeast 
