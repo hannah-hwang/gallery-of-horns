@@ -5,17 +5,22 @@ class SelectedBeast extends React.Component {
     render() {
         return (
             <Modal
-                show={this.props.showModal}
+                show={this.props.show}
                 onHide={this.props.handleCloseModal}>
                 <Modal.Header closeButton>
                     <Modal.Title>{this.props.beastName}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src={this.props.beastIMG} />
+                    <img src={this.props.beastIMG}
+                        alt={this.props.beastDescription}
+                        title={this.props.beastName}
+                        height={300}
+                    />
+                    <p>{this.props.beastDescription}</p>
                 </Modal.Body>
             </Modal>
         )
     }
 }
 
-export default SelectedBeast
+export default SelectedBeast;

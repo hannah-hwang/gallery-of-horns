@@ -7,16 +7,18 @@ class Main extends React.Component {
     render() {
         return (
             <main>
-                {this.props.data.map((hornedBeast, idx) => <HornedBeast title={hornedBeast.title}
+                {this.props.data.map((hornedBeast, idx) => <HornedBeast
+                    title={hornedBeast.title}
                     image_url={hornedBeast.image_url}
                     description={hornedBeast.description}
-                    key={idx}
+                    key={hornedBeast._id}
                     handleShowModal={this.props.handleShowModal}
-                />)}
+                />
+                )}
             </main>
         )
     }
 }
 
-export default Main
+export default Main;
 

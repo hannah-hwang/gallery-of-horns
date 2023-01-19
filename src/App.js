@@ -1,8 +1,8 @@
 import React from "react";
+import data from "./data.json";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import data from "./data.json";
 import SelectedBeast from "./SelectedBeast";
 import "./App.css";
 
@@ -19,6 +19,7 @@ class App extends React.Component {
   }
 
   handleShowModal = (title, img_url, description) => {
+    console.log('inside handleShowModal', title, img_url, description)
     this.setState({
       showModal: true,
       beastName: title,
@@ -35,14 +36,15 @@ class App extends React.Component {
 
 
   render() {
+    console.log(this.state)
     return (
       <>
         <Header />
-        <Main data={data} />
+        <Main data={data} handleShowModal={this.handleShowModal} />
         <Footer />
         <SelectedBeast
-          show={this.props.showModal}
-          onHide={this.props.handleCloseModal}
+          show={this.state.showModal}
+          handleCloseModal={this.handleCloseModal}
           beastName={this.state.beastName}
           beastIMG={this.state.beastIMG}
           beastDescription={this.state.beastDescription}
